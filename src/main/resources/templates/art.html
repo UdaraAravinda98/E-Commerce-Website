@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" th:href="@{/CSS/style.css}" href="../static/CSS/style.css">
+	<title>art</title>
+	<style>
+		.box{
+			display: inline-block;
+			position: relative;
+			width:25%;
+			height:auto;
+			margin:50px;
+			padding:10px;
+			border:1px solid white;
+		}
+
+		.box img{
+			position: relative;
+			width:200px;
+			height:250px;
+		}
+
+		.box:hover, .box h2:hover{
+			transform: scale(1.2);
+			
+			font-weight: bold;
+			transition: 0.5s ease-in ;
+		}
+		.box img:hover{
+			border:1px solid white;
+		}
+
+		h1{
+  			font-size: 48px;
+  			color: white;
+  			margin:20px;
+		}
+		
+		.cart-button {
+		  display: block;
+		  width: 100%;
+		  padding: 8px;
+		  background-color: #333;
+		  color: #fff;
+		  text-align: center;
+		  text-decoration: none;
+		  font-weight: bold;
+		  border-radius: 5px;
+		  transition: background-color 0.3s;
+		  margin: 2px 2px;
+		}
+
+		.cart-button:hover {
+				  background-color: yellow;
+				  color:black;
+				}
+
+
+		.buy-button {
+			  display: block;
+			  width: 100%;
+			  padding: 8px;
+			  background-color: #333;
+			  color: #fff;
+			  text-align: center;
+			  text-decoration: none;
+			  font-weight: bold;
+			  border-radius: 5px;
+			  transition: background-color 0.3s;
+			  margin: 2px 2px;
+			}
+		
+		.buy-button:hover {
+			  background-color: yellow;
+				  color:black;
+			}
+
+
+	</style>
+</head>
+<body>
+	<div class="logo">
+        <img th:src="@{/Images/mylogo1.png}"src="../static/Images/mylogo1.png" alt="logo" width="180px" height="120px">
+    </div>
+
+    <div class="header">
+        <img class="active" th:src="@{/Images/my1.jpg}" src="../static/Images/my1.jpg" alt="Image 1">
+        <img th:src="@{/Images/my1.jpg}" src="../static/Images/my1.jpg" alt="Image 2">
+        <img th:src="@{/Images/my2.jpg}" src="../static/Images/my2.jpg" alt="Image 3">
+        <img th:src="@{/Images/my3.jpg}" src="../static/Images/my3.jpg" alt="Image 4">
+
+        
+
+        <nav id="navigation">
+          <ul>
+            <li><a th:href="@{/home}" href="Home.html">Home</a></li>
+            <li><a th:href="@{/aboutus}" href="aboutus.html">About Us</a></li>
+            <li><a th:href="@{/contact}" href="contactus.html">Contact us</a></li>
+            <li><a th:href="@{/cart}" href="Cart.html">Cart</a></li>
+            <li><a th:href="@{/login}" href="Login.html">Log in</a></li>
+			   
+          </ul>
+        </nav>
+    </div>
+
+
+	<center><h1>Choose subject</h1></center>
+	<div class="box">
+		<center>
+		<h2>Sinhala</h2><br>
+		<img th:src="@{/Images/sinhala.jpg}" src="../static/Images/sinhala.jpg"alt="">
+		<a href="Cart.html" class="cart-button">Add To Cart</a>
+        <a href="BuyNow.html" class="buy-button">Buy Now</a>
+		
+		</center>
+	</div>
+	<div class="box">
+		<center>
+				<h2>Geography</h2><br>
+				<img th:src="@{/Images/buu.jpg}" src="../static/Images/buu.jpg"alt="">
+				<a href="Cart.html" class="cart-button">Add To Cart</a>
+        <a href="BuyNow.html" class="buy-button">Buy Now</a>
+
+		</center>
+	</div>
+	
+	<div class="box">
+		<center>
+		<h2>Politics</h2><br>
+		<img th:src="@{/Images/politics.jpg}" src="../static/Images/politics.jpg"alt="">
+		<a href="Cart.html" class="cart-button">Add To Cart</a>
+        <a href="BuyNow.html" class="buy-button">Buy Now</a>
+		
+		</center>
+	</div>
+	<div class="box">
+		<center>
+		<h2>Dancing</h2><br>
+		<img th:src="@{/Images/dance.jpg}" src="../static/Images/dance.jpg"alt="">
+		<a href="Cart.html" class="cart-button">Add To Cart</a>
+        <a href="BuyNow.html" class="buy-button">Buy Now</a>
+		
+		</center>
+	</div>
+	
+	<footer>
+  <div class="footer">
+  <div class="row">
+  <a href="#"><i class="fa fa-facebook"></i></a>
+  <a href="#"><i class="fa fa-instagram"></i></a>
+  <a href="#"><i class="fa fa-youtube"></i></a>
+  <a href="#"><i class="fa fa-twitter"></i></a>
+  </div>
+
+  <div class="row">
+  <ul>
+  <li><a href="#">Contact us</a></li>
+  <li><a href="#">Our Services</a></li>
+  <li><a href="#">Privacy Policy</a></li>
+  <li><a href="#">Terms & Conditions</a></li>
+  <li><a href="#">Career</a></li>
+  </ul>
+  </div>
+
+  <div class="row">
+  INFERNO Copyright © 2023 Inferno - All rights reserved || Designed By: Booktown
+  </div>
+  </div>
+  </footer>
+    <script type=" " th:src="@{/js/script.js}" src=" "> </script>
+  
+</body>
+</html>
+<script>
+    let images = Array.from(document.querySelectorAll('.header img'));
+    let currentImageIndex = 0;
+    setInterval(function() {
+      images[currentImageIndex].classList.remove('active');
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      images[currentImageIndex].classList.add('active');
+    }, 4000);
+
+
+    window.addEventListener('DOMContentLoaded', function() {
+    setTimeout(scrollDown, 5000); // Scroll down after 5 seconds
+    });
+
+  
+    /*function scrollDown() {
+      window.scrollTo({
+        top: document.documentElement.scrollHeight,
+        behavior: 'smooth'
+      });
+
+      setTimeout(scrollUp, 4000); // Scroll up after 5 seconds
+    }
+
+    function scrollUp() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+
+      setTimeout(scrollDown, 4000); // Scroll down after 5 seconds
+    }*/
+  </script>

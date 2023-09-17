@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" th:href="@{/CSS/style.css}"  href="../static/CSS/style.css">
+  <title>Contact Us</title>
+  <style>
+    body {
+      font-family: 'Play', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    h1 {
+      font-size: 48px;
+      color: white;
+      margin: 20px;
+    }
+    
+    .container {
+      padding: 20px;
+	  border:solid yellow 1px;
+    }
+
+    .contact-section {
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-section h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .contact-section p {
+      font-size: 20px;
+      line-height: 1.6;
+      color: black;
+    }
+
+    .contact-form {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 300px;
+      padding: 10px;
+      margin: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+    }
+
+    .contact-form textarea {
+      height: 150px;
+    }
+
+    .contact-form button {
+      width: 150px;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .contact-form button:hover {
+      background-color: #0056b3;
+    }
+    
+  
+  </style>
+</head>
+<body>
+  <div class="logo">
+    <img th:src="@{/Images/mylogo1.png}" src="../static/Images/mylogo1.png" alt="logo" width="180px" height="120px">
+  </div>
+
+  <div class="header">
+      <img class="active"  th:src="@{/Images/my1.jpg}" src="../static/Images/my1.jpg" alt="Image 1">
+        <img th:src="@{/Images/my1.jpg}" src="../static/Images/my1.jpg" alt="Image 2">
+        <img th:src="@{/Images/my2.jpg}" src="../static/Images/my2.jpg" alt="Image 3">
+        <img th:src="@{/Images/my3.jpg}" src="../static/Images/my3.jpg" alt="Image 4">
+
+        <nav id="navigation">
+          <ul>
+              <li><a th:href="@{/home}" href="Home.html">Home</a></li>
+            <li><a th:href="@{/aboutus}" href="aboutus.html">About Us</a></li>
+            <li><a th:href="@{/contactus}" href="contactus.html">Contact us</a></li>
+            <li><a th:href="@{/cart}" href="Cart.html">Cart</a></li>
+          </ul>
+        </nav>
+  </div>  
+
+  <center>
+    <h1>Contact Us</h1>
+  </center>
+
+  <!-- Contact Form -->
+  <div class="container">
+    <div class="contact-section">
+      <p>
+        If you have any questions, feedback, or inquiries, please don't hesitate to contact us using the form below.
+      </p>
+      <div class="contact-form">
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <textarea placeholder="Your Message"></textarea>
+        <button type="submit">Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer">
+      <div class="row">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-youtube"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">Our Services</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Career</a></li>
+        </ul>
+      </div>
+      <div class="row">
+        INFERNO Copyright © 2023 Inferno - All rights reserved || Designed By: Booktown
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"  >
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" th:href="@{/CSS/style.css}" href="../static/CSS/style.css">
+  <title>cart</title>
+  <style>
+  
+  
+  body {
+      font-family: 'Play', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+      padding: 10px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .cart-item img {
+      width: 100px;
+      height: 120px;
+      margin-right: 20px;
+    }
+
+    .cart-item-details {
+      flex: 1;
+    }
+
+    .cart-item-name {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .cart-item-price {
+      font-size: 18px;
+      color: #555;
+    }
+
+    .cart-item-actions {
+      display: flex;
+      align-items: center;
+    }
+
+    .cart-item-quantity {
+      margin-right: 10px;
+      width: 40px;
+      text-align: center;
+    }
+
+    .cart-item-remove {
+      color: red;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    .cart-total {
+      font-size: 24px;
+      font-weight: bold;
+      color: black;
+      text-align: right;
+      margin: 20px;
+    }
+
+    .checkout-button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      margin: 20px;
+    }
+
+    .checkout-button:hover {
+      background-color: yellow;
+      color: black;
+    }
+	
+	 @media screen and (max-width: 768px) {
+      .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .cart-item img {
+        margin: 0;
+        margin-bottom: 10px;
+      }
+    }
+	
+	.cart-total{
+		color:white;
+	}
+	
+	h1 {
+      font-size: 48px;
+		color:white;
+      margin: 20px;
+    }
+
+  </style>
+</head>
+<body>
+    <div class="logo">
+        <img th:src="@{/Images/mylogo1.png}"src="../static/Images/mylogo1.png" alt="logo" width="180px" height="120px">
+    </div>
+
+    <div class="header">
+        <img class="active"  th:src="@{/Images/my1.jpg}" src="../static/Images/my1.jpg" alt="Image 1">
+        <img th:src="@{/Images/my1.jpg}" src="../static/Images/my1.jpg" alt="Image 2">
+        <img th:src="@{/Images/my2.jpg}" src="../static/Images/my2.jpg" alt="Image 3">
+        <img th:src="@{/Images/my3.jpg}" src="../static/Images/my3.jpg" alt="Image 4">
+       
+        
+
+        <nav id="navigation">
+          <ul>
+              <li><a th:href="@{/home}" href="Home.html">Home</a></li>
+            <li><a th:href="@{/aboutus}" href="aboutus.html">About Us</a></li>
+            <li><a th:href="@{/contactus}" href="contactus.html">Contact us</a></li>
+            <li><a th:href="@{/cart}" href="Cart.html">Cart</a></li>
+            <li><a th:href="@{/login}" href="Login.html">Log in</a></li>
+          </ul>
+        </nav>
+    </div>  
+	
+	<center>
+    <h1>Your Cart</h1>
+  </center>
+  
+
+  <!-- Cart Items -->
+  <div class="cart-item">
+    <img th:src="@{/Images/image1.jpg}" src="../static/Images/image1.jpg" alt="Product 1">
+    <div class="cart-item-details">
+      <div class="cart-item-name">Product 1</div>
+      <div class="cart-item-price">$25.00</div>
+    </div>
+    <div class="cart-item-actions">
+      <input class="cart-item-quantity" type="number" min="1" value="1">
+      <span class="cart-item-remove"><i class="fa fa-trash"></i></span>
+    </div>
+  </div>
+
+  <div class="cart-item">
+    <img th:src="@{/Images/image2.jpg}" src="../static/Images/image2.jpg" alt="Product 2">
+    <div class="cart-item-details">
+      <div class="cart-item-name">Product 2</div>
+      <div class="cart-item-price">$18.99</div>
+    </div>
+    <div class="cart-item-actions">
+      <input class="cart-item-quantity" type="number" min="1" value="1">
+      <span class="cart-item-remove"><i class="fa fa-trash"></i></span>
+    </div>
+  </div>
+
+  <!-- Total -->
+  <div class="cart-total">Total: $43.99</div>
+
+  <!-- Checkout Button -->
+  <a href="#" class="checkout-button">Proceed to Checkout</a>
+	
+
+	
+  <center>
+  
+  <footer>
+  <div class="footer">
+  <div class="row">
+  <a href="#"><i class="fa fa-facebook"></i></a>
+  <a href="#"><i class="fa fa-instagram"></i></a>
+  <a href="#"><i class="fa fa-youtube"></i></a>
+  <a href="#"><i class="fa fa-twitter"></i></a>
+  </div>
+
+  <div class="row">
+  <ul>
+  <li><a href="#">Contact us</a></li>
+  <li><a href="#">Our Services</a></li>
+  <li><a href="#">Privacy Policy</a></li>
+  <li><a href="#">Terms & Conditions</a></li>
+  <li><a href="#">Career</a></li>
+  </ul>
+  </div>
+
+  <div class="row">
+  INFERNO Copyright © 2023 Inferno - All rights reserved || Designed By: Booktown
+  </div>
+  </div>
+  </footer>
+  
+   <script type=" " th:src="@{/js/script.js}" src=" "> </script>
+  
+</body>
+</html>
+<script>
+    let images = Array.from(document.querySelectorAll('.header img'));
+    let currentImageIndex = 0;
+    setInterval(function() {
+      images[currentImageIndex].classList.remove('active');
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      images[currentImageIndex].classList.add('active');
+    }, 4000);
+  </script>

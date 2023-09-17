@@ -1,0 +1,162 @@
+<!DOCTYPE  html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <title>register</title>
+    <style>
+        *{
+      margin:0px;
+      padding:0px;
+      box-sizing: border-box;
+    }
+
+    body{
+      background: black;
+      color:white;
+    }
+
+    .header {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      overflow: hidden;
+    }
+
+    .header img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .header img.active {
+      opacity: 1;
+    }
+
+    .logo {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width:50px;
+      height:50px;
+    }
+    
+    #navigation {
+      position: absolute;
+      top: 50px; 
+      right: 100px;
+      font-size:20px;
+    }
+    
+    #navigation ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    #navigation ul li {
+      display: inline-block;
+      margin-right: 10px; /* Adjust the spacing as needed */
+    }
+    
+    #navigation ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 5px 10px;
+    }
+
+    #navigation ul li a:hover {
+      background-color: #fff;
+      color: black;
+      font-weight: bold;
+      transition: all 0.5s ease ;
+    }
+    .container{
+        margin-left: 30%;
+    }
+    </style>
+</head>
+<body>
+ <div class="logo">
+       <img th:src="@{/Images/mylogo1.png}"src="../static/Images/mylogo1.png" alt="logo" width="180px" height="120px">
+    </div>
+
+    <div class="header">
+        <img class="active"  th:src="@{/Images/my1.jpg}" src="../static/Images/my1.jpg" alt="Image 1">
+        <img th:src="@{/Images/my1.jpg}" src="../static/Images/my1.jpg" alt="Image 2">
+        <img th:src="@{/Images/my2.jpg}" src="../static/Images/my2.jpg" alt="Image 3">
+        <img th:src="@{/Images/my3.jpg}" src="../static/Images/my3.jpg" alt="Image 4">
+       
+
+        
+
+        <nav id="navigation">
+          <ul>
+              <li><a th:href="@{/home}" href="Home.html">Home</a></li>
+            <li><a th:href="@{/aboutus}" href="aboutus.html">About Us</a></li>
+            <li><a th:href="@{/contact}" href="contactus.html">Contact us</a></li>
+            <li><a th:href="@{/cart}" href="Cart.html">Cart</a></li>
+          </ul>
+        </nav>
+    </div> 
+    
+<div class="container">
+    <div class="col-sm-6"><center>
+        <h3 style="margin-top: 10px">Sign Up Now</h3>
+        <p>Please fill out this to register</p></center>
+        <form th:action="@{/register}" th:object="${user}" method="post">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" name="firstName" id="firstName" required placeholder="Your Firstname" class="form-control form-control-lg">
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" name="lastName" id="lastName" required placeholder="Your Lastname" class="form-control form-control-lg">
+            </div>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control form-control-lg" required minlength="6" placeholder="Email" name="email" id="email"
+                       aria-describedby="emailHelp">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with
+                    anyone else.</small>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control form-control-lg" required placeholder="Password" name="password"
+                       id="password">
+            </div>
+
+            <input type="submit" value="Register" class="btn btn-primary btn-block">
+            <span style="margin-top: 10px">Already have an account <a class="linkControl" href="./login.html"
+            th:href="@{/login}">Login here</a></span>
+        </form>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
+<script>
+    let images = Array.from(document.querySelectorAll('.header img'));
+    let currentImageIndex = 0;
+    setInterval(function() {
+      images[currentImageIndex].classList.remove('active');
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      images[currentImageIndex].classList.add('active');
+    }, 4000);
+</script>    

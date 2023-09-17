@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" th:href="@{/CSS/style.css}" href="../static/CSS/style.css">
+  <title>Home</title>
+  <style>
+
+      
+    .con {
+      position: relative;
+      margin: 50px;
+      padding:20px;
+      display: inline-block;
+      border: 1px solid white;
+      transform: scale(1.2);
+    }
+    
+    
+    
+    .text {
+      position: absolute;
+      top: 50%;
+      left: 40%;
+      transform: translate(-50%, -50%);
+      color: #FC6600;
+      font-size: 15px;
+      margin-left:25px;
+    }
+    .con:hover{
+      transform: scale(1.3);
+      transition: all 0.3s ease;
+    }
+
+   .offers img{
+    width:200px;
+    height:250px;
+	margin:10px;
+   }
+   
+   .offers h2{
+   color:red;
+   }
+   
+    h1 {
+      font-size: 48px;
+      margin: 20px;
+    }
+
+
+  </style>
+</head>
+<body>
+    <div class="logo">
+        <img th:src="@{/Images/mylogo1.png}" src="../static/Images/mylogo1.png" alt="logo" width="180px" height="120px">
+    </div>
+
+    <div class="header">
+        <img class="active"  th:src="@{/Images/my1.jpg}" src="../static/Images/my1.jpg" alt="Image 1">
+        <img th:src="@{/Images/my1.jpg}" src="../static/Images/my1.jpg" alt="Image 2">
+        <img th:src="@{/Images/my2.jpg}" src="../static/Images/my2.jpg" alt="Image 3">
+        <img th:src="@{/Images/my3.jpg}" src="../static/Images/my3.jpg" alt="Image 4">
+       
+
+        <nav id="navigation">
+          <ul>
+            <li><a th:href="@{/home}" href="Home.html">Home</a></li>
+            <li><a th:href="@{/aboutus}" href="aboutus.html">About Us</a></li>
+            <li><a th:href="@{/contactus}" href="contactus.html">Contact us</a></li>
+                <li><a th:href="@{/cart}" href="Cart.html">Cart</a></li>
+                <li><a th:href="@{/login}" href="Login.html">Log in</a></li>
+				  
+          </ul>
+        </nav>
+    </div>  
+  <center>
+  <div class="content">
+  <br><br><br>
+  <h1>Choose Stream</h1><br>
+
+    <div class="con">
+      <a th:href="@{/science}" href="science.html">
+       <img th:src="@{/Images/science1.png}" src="../static/Images/science1.png" alt="science" width="300px" height="150px">
+    </a>
+    </div>
+
+    <div class="con">
+	<a th:href="@{/art}" href="art.html">
+       <img th:src="@{/Images/art.png}" src="../static/Images/art.png" alt="art" width="300px" height="150px">
+    </div>
+
+    <div class="con">
+	<a th:href="@{/commerce}" href="commerce.html">
+        <img th:src="@{/Images/commerce.png}" src="../static/Images/commerce.png" alt="commerce" width="300px" height="150px">
+      <div class="text">
+      </div>
+    </div>
+	
+  </div>
+  
+  
+	  <div class="offers">
+	  <center><h2> Offers</h2></center>
+	  <br>
+
+		<marquee>
+			<img th:src="@{/Images/subjects/econ.jpg}" src="../static/Images/subjects/econ.jpg" alt="Image 1">
+			<img th:src="@{/Images/subjects/buu.jpg}" src="../static/Images/subjects/buu.jpg" alt="Image 1">
+			<img th:src="@{/Images/subjects/physics.jpg}" src="../static/Images/subjects/physics.jpg" alt="Image 1">
+			<img th:src="@{/Images/subjects/acc.jpg}" src="../static/Images/subjects/acc.jpg" alt="Image 1">			
+			 
+			 </marquee>
+	  </div>  
+  </center>
+
+  <footer>
+  <div class="footer">
+  <div class="row">
+  <a href="#"><i class="fa fa-facebook"></i></a>
+  <a href="#"><i class="fa fa-instagram"></i></a>
+  <a href="#"><i class="fa fa-youtube"></i></a>
+  <a href="#"><i class="fa fa-twitter"></i></a>
+  </div>
+
+  <div class="row">
+  <ul>
+  <li><a href="#">Contact us</a></li>
+  <li><a href="#">Our Services</a></li>
+  <li><a href="#">Privacy Policy</a></li>
+  <li><a href="#">Terms & Conditions</a></li>
+  <li><a href="#">Career</a></li>
+  </ul>
+  </div>
+
+  <div class="row">
+  INFERNO Copyright © 2023 Inferno - All rights reserved || Designed By: Booktown
+  </div>
+  </div>
+  </footer>
+  
+  <script type=" " th:src="@{/js/script.js}" src=" "> </script>
+  
+</body>
+</html>

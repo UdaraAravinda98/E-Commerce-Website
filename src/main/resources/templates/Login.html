@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+  <style>
+	body{
+		background-image: url('../static/Images/my1.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		color: white;
+	}
+	.login-box {
+	  width: 300px;
+	  background: rgba(0, 0, 0, 0.6);
+	  border-radius: 10px;
+	  padding: 40px;
+	  margin: 0 auto;
+	  margin-top: 100px;
+	  box-shadow: 0 0 60px rgba(0, 181, 204, 1);
+	}
+
+	.login-box h2 {
+	  text-align: center;
+	  margin-bottom: 20px;
+	}
+
+	.login-box .user-box {
+	  position: relative;
+	  margin-bottom: 20px;
+	}
+
+	.login-box .user-box input {
+	  width: 100%;
+	  padding: 10px 0;
+	  font-size: 16px;
+	  color: white;
+	  border: none;
+	  border-bottom: 1px solid #999;
+	  outline: none;
+	  background: transparent;
+	}
+
+	.login-box .user-box label {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  padding: 10px 0;
+	  font-size: 20px;
+	  color: #999;
+	  pointer-events: none;
+	  transition: 0.5s;
+	}
+
+	.login-box .user-box input:focus ~ label,
+	.login-box .user-box input:valid ~ label {
+	  top: -20px;
+	  font-size: 18px;
+	  color: #03a9f4;
+	}
+
+	.login-box input[type="submit"] {
+	  background: rgb(0, 181, 204);
+	  border: none;
+	  color: #fff;
+	  padding: 10px 20px;
+	  cursor: pointer;
+	  border-radius: 5px;
+	  font-size: 16px;
+	}
+
+	.login-box input[type="submit"]:hover {
+	  background: #0492c2;
+	}
+	label{
+		font-size:20px;
+		color:white;
+	}
+	h2{
+		font-size:35px;
+		color:white;
+	}
+	a{
+		color:skyblue;
+		font-size:16px;
+	}
+	#register{
+		font-size:20px;
+	}
+
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <center><img th:src="@{/Images/mylogo1.png}"src="../static/Images/mylogo1.png" alt="logo" width="180px" height="120px">
+	<h2>Login</h2></center>
+    <form th:action="@{/login}" method="post">
+        <div class="user-box">
+            <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="" class="form-control form-control-lg">
+        </div>
+
+        <div class="user-box">
+            <label for="password">Password</label>
+            <input type="password" class="form-control form-control-lg" placeholder="" name="password" id="password">
+        </div>
+      <input type="checkbox" id="remember-me">
+      <label for="remember_me">Remember me&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+      <a href="#">Forgot Password?</a><br><br><br>&nbsp&nbsp&nbsp&nbsp
+	  <a th:href="@{/login/register}" href=" " id="register">Register</a>
+	  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+	  <a href="Home.html">
+    <a th:href="@{/home}" href=" "> <input type="submit" value="Login" name="login"> </a>
+    </form>
+  </div>
+  
+  <script type=" " th:src="@{/js/script.js}" src=" "> </script>
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+
+</script>

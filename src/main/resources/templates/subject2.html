@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+  <title>subject2</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" type="text/css" href="../static/CSS/subject.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+ 
+</head>
+<body>
+  <header class="bg-black py-3">
+    <div class="container">
+      <div class="row justify-content-between align-items-center">
+        <div class="col-md-4">
+          
+        </div>
+        <div class="col-md-4">
+          <!-- Add the search bar -->
+          <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+        <div class="col-md-4">
+          <!-- Add the "Add to Cart" button -->
+          <button class="btn btn-primary float-right"><i class="fas fa-shopping-cart">&nbsp;&nbsp;<span id="cart-item-count">0</span></i></button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="logo">
+         <img th:src="@{/Images/mylogo1.png}" src="../static/Images/mylogo1.png" alt="logo" width="180px" height="120px">
+    </div>
+
+    <div class="header">
+         <img class="active"  th:src="@{/Images/my1.jpg}" src="../static/Images/my1.jpg" alt="Image 1">
+        <img th:src="@{/Images/my1.jpg}" src="../static/Images/my1.jpg" alt="Image 2">
+        <img th:src="@{/Images/my2.jpg}" src="../static/Images/my2.jpg" alt="Image 3">
+        <img th:src="@{/Images/my3.jpg}" src="../static/Images/my3.jpg" alt="Image 4">
+       
+        
+
+        <nav id="navigation">
+          <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contacts</a></li>
+            <li><a href="#">Feedback</a></li>
+          </ul>
+        </nav>
+    </div>
+    <!-- Add Bootstrap JS script links (you may need them for other Bootstrap features) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+<script>
+
+let images = Array.from(document.querySelectorAll('.header img'));
+    let currentImageIndex = 0;
+    setInterval(function() {
+      images[currentImageIndex].classList.remove('active');
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      images[currentImageIndex].classList.add('active');
+    }, 4000);
+
+// Example cart item count, you can replace this with your actual cart count logic
+let cartItemCount = 0;
+
+function updateCartItemCount() {
+  const cartItemCountElement = document.getElementById("cart-item-count");
+  cartItemCountElement.textContent = cartItemCount.toString();
+}
+
+// Call this function whenever the cart item count changes
+updateCartItemCount();    
+
+
+</script>
+
